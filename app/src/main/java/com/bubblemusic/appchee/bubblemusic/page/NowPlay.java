@@ -236,22 +236,22 @@ public class NowPlay extends Fragment {
             public void onClick(View v) { // 이전 버튼
                 if(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime<buttonSleepTime) //중복 클릭 방지
                 {
-                    Log.d("timetime",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
+                    Log.d("time",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
                     return;
                 }
                 MusicApplication.getInstance().getServiceInterface().mService.lastclicktime=SystemClock.elapsedRealtime();
 
-                Log.d("TestGG","pre button");
+                Log.d("Action","pre button");
                 if(isListNull()==true) // service 비어있나 확인후 list삽입
                 {
-                    Log.d("TestGG","service is null");
+                    Log.d("Null","service is null");
                     if(savedData.getData().size()>0) {
                         MusicApplication.getInstance().getServiceInterface().setPlayList(savedData.getData());
                         MusicApplication.getInstance().getServiceInterface().setNowPos(savedData.getListpos());
                         if(isListNull()==false) { // 들어갔나 확인
                             MusicApplication.getInstance().getServiceInterface().rewind();
                             updateNow();
-                            Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                            Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                             play.setVisibility(View.INVISIBLE);
                             play.setClickable(false);
 
@@ -262,10 +262,10 @@ public class NowPlay extends Fragment {
                 }
                 else
                 {
-                    Log.d("TestGG","service is not null");
+                    Log.d("Null","service is not null");
                     MusicApplication.getInstance().getServiceInterface().rewind();
                     updateNow();
-                    Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                    Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                     play.setVisibility(View.INVISIBLE);
                     play.setClickable(false);
 
@@ -280,22 +280,22 @@ public class NowPlay extends Fragment {
             public void onClick(View v) { //다음버튼
                 if(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime<buttonSleepTime) //중복 클릭 방지
                 {
-                    Log.d("timetime",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
+                    Log.d("time",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
                     return;
                 }
                 MusicApplication.getInstance().getServiceInterface().mService.lastclicktime=SystemClock.elapsedRealtime();
 
-                Log.d("TestGG","next button");
+                Log.d("Action","next button");
                 if(isListNull()==true) // service 비어있나 확인후 list삽입
                 {
-                    Log.d("TestGG","service is null");
+                    Log.d("Null","service is null");
                     if(savedData.getData().size()>0) {
                         MusicApplication.getInstance().getServiceInterface().setPlayList(savedData.getData());
                         MusicApplication.getInstance().getServiceInterface().setNowPos(savedData.getListpos());
                         if(isListNull()==false) { // 들어갔나 확인
                             MusicApplication.getInstance().getServiceInterface().forward();
                             updateNow();
-                            Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                            Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                             play.setVisibility(View.INVISIBLE);
                             play.setClickable(false);
 
@@ -306,10 +306,10 @@ public class NowPlay extends Fragment {
                 }
                 else
                 {
-                    Log.d("TestGG","service is not null");
+                    Log.d("Null","service is not null");
                     MusicApplication.getInstance().getServiceInterface().forward();
                     updateNow();
-                    Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                    Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                     play.setVisibility(View.INVISIBLE);
                     play.setClickable(false);
 
@@ -324,28 +324,28 @@ public class NowPlay extends Fragment {
             public void onClick(View v) { //시작버튼
                 if(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime<buttonSleepTime) //중복 클릭 방지
                 {
-                    Log.d("timetime",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
+                    Log.d("time",""+(SystemClock.elapsedRealtime()-MusicApplication.getInstance().getServiceInterface().mService.lastclicktime));
                     return;
                 }
                 MusicApplication.getInstance().getServiceInterface().mService.lastclicktime=SystemClock.elapsedRealtime();
 
-                Log.d("TestGG","play button");
+                Log.d("Action","play button");
                 if(isListNull()==true) // service 비어있나 확인후 list삽입
                 {
-                    Log.d("nextProcess","시작버튼 == true");
+                    Log.d("Action","시작버튼 == true");
                     if(savedData.getData().size()>0) {
                         MusicApplication.getInstance().getServiceInterface().setPlayList(savedData.getData());
                         MusicApplication.getInstance().getServiceInterface().setNowPos(savedData.getListpos());
                         if(isListNull()==false) { // 들어갔나 확인
                             MusicApplication.getInstance().getServiceInterface().play(savedData.getListpos());
-                            Log.d("ppap","play btton up + "+MusicApplication.getInstance().getServiceInterface().mService.isNoti);
+                            Log.d("Action","play btton up + "+MusicApplication.getInstance().getServiceInterface().mService.isNoti);
                             if(MusicApplication.getInstance().getServiceInterface().mService.isNoti ==false || isRun ==false)
                             {
-                                Log.d("ppap","play btton up");
+                                Log.d("Action","play btton up");
                                 startSeekBar();
                             }
                             MusicApplication.getInstance().getServiceInterface().getMediaPlayer().seekTo(sb.getProgress());
-                            Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                            Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                             play.setVisibility(View.INVISIBLE);
                             play.setClickable(false);
 
@@ -356,17 +356,17 @@ public class NowPlay extends Fragment {
                 }
                 else
                 {
-                    Log.d("nextProcess","시작버튼 == false");
-                    Log.d("TestGG","service is not null");
+                    Log.d("Action","시작버튼 == false");
+                    Log.d("Null","service is not null");
                     MusicApplication.getInstance().getServiceInterface().play();
-                    Log.d("ppap","play btton down + "+MusicApplication.getInstance().getServiceInterface().mService.isNoti);
+                    Log.d("Action","play btton down + "+MusicApplication.getInstance().getServiceInterface().mService.isNoti);
                     if(MusicApplication.getInstance().getServiceInterface().mService.isNoti ==false || isRun==false)
                     {
-                        Log.d("ppap","play btton down");
+                        Log.d("Action","play btton down");
                         startSeekBar();
                     }
                     MusicApplication.getInstance().getServiceInterface().getMediaPlayer().seekTo(sb.getProgress());
-                    Log.d("TestGG",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
+                    Log.d("Action",""+MusicApplication.getInstance().getServiceInterface().getNowPos());
                     play.setVisibility(View.INVISIBLE);
                     play.setClickable(false);
 
@@ -633,7 +633,7 @@ public class NowPlay extends Fragment {
         TextContainer.animate().alpha(1f).setDuration(100);
     }
 
-    private void startSeekBar()
+    private void startSeekBar() // Thread
     {
         isRun=true;
         timer=new Timer();
@@ -644,20 +644,20 @@ public class NowPlay extends Fragment {
                 if(MusicApplication.getInstance().getServiceInterface().mService.isMainactivity==false)
                 {
                     isRun=false;
-                    Log.d("ppap","activity cut");
+                    Log.d("Thread","activity cut");
                     timer.cancel(); // activity종료하면 죽임
                 }
                 else {
                     if(MusicApplication.getInstance().getServiceInterface().mService.isNoti==false)
                     {
-                        Log.d("ppap","noti cut");
+                        Log.d("Thread","noti cut");
                         isRun=false;
                         timer.cancel();
                     }
                     else if(MusicApplication.getInstance().getServiceInterface().mService.isNoti==true)
                     {
                         sb.setProgress(MusicApplication.getInstance().getServiceInterface().getMediaPlayer().getCurrentPosition());
-                        Log.d("timercount", "" + (cc++));
+                        Log.d("Thread", "" + (cc++));
                     }
                 }
             }
