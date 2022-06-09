@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@color/design_default_color_primary">
+
+    <ImageView
+        android:id="@+id/img_albumart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="Sample Title"
+        android:textColor="@android:color/black"/>
+
+    <ImageButton
+        android:id="@+id/btn_rewind"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        tools:srcCompat="@android:drawable/ic_media_previous" />
+
+    <ImageButton
+        android:id="@+id/btn_play_pause"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="visible"
+        tools:srcCompat="@android:drawable/ic_media_pause" />
+
+
+    <ImageButton
+        android:id="@+id/btn_forward"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        tools:srcCompat="@android:drawable/ic_media_next" />
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        tools:srcCompat="@android:drawable/ic_delete" />
+</LinearLayout>
