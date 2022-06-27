@@ -645,7 +645,7 @@ public class NowPlay extends Fragment {
                 {
                     isRun=false;
                     Log.d("Thread","activity cut");
-                    timer.cancel(); // activity종료하면 죽임
+                    timer.cancel(); // activity종료하면
                 }
                 else {
                     if(MusicApplication.getInstance().getServiceInterface().mService.isNoti==false)
